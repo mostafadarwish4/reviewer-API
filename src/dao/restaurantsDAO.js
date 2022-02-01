@@ -24,9 +24,8 @@ let restaurants;
             if("name" in filters){
                 query={$text:{$search:filters['name']}}
             }else if("cuisine" in filters){
-                query={"cuisine":filters["cuisine"]} // this equal {"cusine":{$eq:filters['cusine']}}
-                //$eq refers to equal operator
-                //gt greater than ,$lt less than
+                query={"cusine":{$eq:filters['cusine']}}
+                
             }else if("zipcode" in filters){
                 query={"address.zipcode":{$eq:filters["zipcode"]}}
             }
